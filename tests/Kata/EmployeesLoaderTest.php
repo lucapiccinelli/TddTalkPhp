@@ -20,3 +20,26 @@ class EmployeesLoaderTest extends TestCase
         $this->assertEquals($expectedEmployees, $employees);
     }
 }
+
+class EmployeesLoader {
+    public static function Load($filename)
+    {
+        return array();
+    }
+}
+
+class Employee
+{
+    public $Email;
+    public $Firstname;
+    public $Lastname;
+    public $DateOfBirth;
+
+    public function __construct($firstname, $lastname, $dateOfBirth, $email)
+    {
+        $this->Email = $email;
+        $this->Firstname = $firstname;
+        $this->Lastname = $lastname;
+        $this->DateOfBirth = $dateOfBirth;
+    }
+}

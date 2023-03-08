@@ -3,3 +3,5 @@ composer.lock
 /vendor/
 !.project.org
 !.gitignore
+swc.sh
+git_ids.txt

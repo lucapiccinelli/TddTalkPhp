@@ -3,6 +3,7 @@
 namespace Kata;
 
 use DateTime;
+use Kata\EmployeesLineParser;
 
 class EmployeesLoader {
     public static function Load($filename)

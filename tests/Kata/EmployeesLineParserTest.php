@@ -21,4 +21,23 @@ class EmployeeLineParserTest extends TestCase
 
         $this->assertEquals($expectedEmployee, $employee);
     }
+
+    /**
+     * @dataProvider notWellFormattedLinesProvider
+     */
+    public function testParsingALineNotWellFormattedThrowsAnArgumentException($employeeLine)
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        EmployeesLineParser::parseLineToEmployee($employeeLine);
+    }
+
+    public function notWellFormattedLinesProvider()
+    {
+        return [
+            ["Doe, John, john.doe@foobar.com"],
+            ["Doe, John,, john.doe@foobar.com"],
+            ["Doe, John, banana, john.doe@foobar.com"]
+        ];
+    }
 }
+
